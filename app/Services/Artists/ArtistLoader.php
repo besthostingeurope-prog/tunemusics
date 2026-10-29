@@ -49,6 +49,7 @@ class ArtistLoader
         if ($loader === 'artistPage') {
             if (
                 $artist->needsUpdating() &&
+                config('app.allow_live_scrape', false) &&
                 ($updatedArtist = (new MusicMetadataProvider())->importArtist(
                     $artist,
                 ))
