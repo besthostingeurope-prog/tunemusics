@@ -1,0 +1,2 @@
+import{R as c,r as e,bQ as o,j as d,bR as f}from"./main-Cw1twhTG.js";const p=c.forwardRef((a,l)=>{const r=a.children,[t,s]=e.useState(null),n=e.useRef(null);return e.useImperativeHandle(l,()=>(u,i)=>{o.flushSync(()=>{s(r(u))}),i(n.current),requestAnimationFrame(()=>{s(null)})},[r]),t?o.createPortal(d.jsx("div",{style:{zIndex:-100,position:"absolute",top:0,left:-1e5},ref:n,children:t}),f):null});export{p as D};
+//# sourceMappingURL=drag-preview-ClbjpTlL.js.map

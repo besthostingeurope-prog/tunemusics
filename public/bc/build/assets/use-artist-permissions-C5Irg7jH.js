@@ -1,0 +1,2 @@
+import{h as o,r as c}from"./main-DrSbOir7.js";function d(i){const{user:s,hasPermission:e}=o();return c.useMemo(()=>{var a;const t={canEdit:!1,canDelete:!1};if(s!=null&&s.id){const n=!!((a=s.artists)!=null&&a.find(r=>r.id===i.id));t.canEdit=e("artists.update")||e("music.update")||n,t.canDelete=e("artists.delete")||e("music.delete")||n}return t},[s,i,e])}export{d as u};
+//# sourceMappingURL=use-artist-permissions-C5Irg7jH.js.map

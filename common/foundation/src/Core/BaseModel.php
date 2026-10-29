@@ -1,0 +1,194 @@
+<?php
+
+namespace Common\Core;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+
+abstract class BaseModel extends Model
+{
+    const MODEL_TYPE = '';
+
+    abstract public static function filterableFields(): array;
+    abstract public function toNormalizedArray(): array;
+    abstract public function toSearchableArray(): array;
+
+    abstract public static function getModelTypeAttribute(): string;
+
+    public function getMorphClass()
+    {
+        return static::MODEL_TYPE;
+    }
+
+    public function scopeMysqlSearch(Builder $builder, string $query): Builder
+    {
+        $searchableFields = [];
+        $searchableRelations = [];
+
+        foreach ((new static())->toSearchableArray() as $field => $value) {
+            if (
+                !Arr::first(
+                    static::filterableFields(),
+                    fn($ff) => Str::is($ff, $field),
+                )
+            ) {
+                $relationField = Str::camel($field);
+                if ((new static())->isRelation($relationField)) {
+                    $searchableRelations[] = $relationField;
+                } else {
+                    $searchableFields[] = $field;
+                }
+            }
+        }
+
+        $mode = config('scout.scout_mysql_mode');
+        if (
+            $mode === 'fulltext' &&
+            strlen($query) >= 3 &&
+            count($searchableRelations)
+        ) {
+            // MATCH() with OR EXISTS(MATCH()) disables the fulltext index;
+            // prefetch matching ids with separate indexed queries instead
+            $keyName = $this->qualifyColumn($this->getKeyName());
+            $ids = count($searchableFields)
+                ? (new static())
+                    ->newQuery()
+                    ->matches($searchableFields, $query)
+                    ->orderByDesc('relevance')
+                    ->limit(1000)
+                    ->pluck($keyName)
+                : collect();
+            foreach ($searchableRelations as $relation) {
+                $relatedModel = (new static())->$relation()->getRelated();
+                $relatedIds = $relatedModel
+                    ->newQuery()
+                    ->mysqlSearch($query)
+                    ->when(
+                        config('scout.scout_mysql_mode') === 'fulltext' &&
+                            strlen($query) >= 3,
+                        fn($q) => $q->orderByDesc('relevance'),
+                    )
+                    ->limit(500)
+                    ->pluck($relatedModel->getQualifiedKeyName());
+                if ($relatedIds->isNotEmpty()) {
+                    $viaRelation = (new static())
+                        ->newQuery()
+                        ->whereHas(
+                            $relation,
+                            fn(Builder $q) => $q->whereIn(
+                                $q->getModel()->getQualifiedKeyName(),
+                                $relatedIds,
+                            ),
+                        )
+                        ->limit(1000)
+                        ->pluck($keyName);
+                    $ids = $ids->concat($viaRelation);
+                }
+            }
+            $builder->whereIn($keyName, $ids->unique()->values()->all());
+            if (count($searchableFields)) {
+                if (is_null($builder->getQuery()->columns)) {
+                    $builder->select($this->qualifyColumn('*'));
+                }
+                $colString = implode(
+                    ',',
+                    array_map(
+                        fn($col) => $this->qualifyColumn($col),
+                        $searchableFields,
+                    ),
+                );
+                $builder->selectRaw(
+                    "MATCH($colString) AGAINST(? IN NATURAL LANGUAGE MODE) AS relevance",
+                    [$query],
+                );
+                $builder->orderByDesc('relevance');
+            }
+            return $builder;
+        }
+
+        $builder->matches($searchableFields, $query);
+
+        foreach ($searchableRelations as $relation) {
+            $builder->orWhereHas(
+                $relation,
+                fn(Builder $q) => $q->mysqlSearch($query),
+            );
+        }
+
+        return $builder;
+    }
+
+    public function scopeMatches(
+        Builder $builder,
+        array $columns,
+        string $value,
+    ): Builder {
+        $mode = config('scout.scout_mysql_mode');
+        $columns = array_map(fn($col) => $this->qualifyColumn($col), $columns);
+        if ($mode === 'fulltext' && strlen($value) >= 3) {
+            if (is_null($builder->getQuery()->columns)) {
+                $builder->select($this->qualifyColumn('*'));
+            }
+            $colString = implode(',', $columns);
+            $builder->selectRaw(
+                "MATCH($colString) AGAINST(? IN NATURAL LANGUAGE MODE) AS relevance",
+                [$value],
+            );
+            $builder->whereRaw("MATCH($colString) AGAINST(?)", [$value]);
+        } else {
+            $builder->where(function (Builder $nestedBuilder) use (
+                $columns,
+                $mode,
+                $value,
+            ) {
+                foreach ($columns as $column) {
+                    $nestedBuilder->orWhere(
+                        $column,
+                        'like',
+                        $mode === 'basic' ? "$value%" : "%$value%",
+                    );
+                }
+            });
+        }
+
+        return $builder;
+    }
+
+    public function getSearchableValues(): array
+    {
+        $searchableValues = [];
+        foreach ($this->toSearchableArray() as $key => $value) {
+            if (
+                !!Arr::first(
+                    static::filterableFields(),
+                    fn($ff) => Str::is($ff, $key),
+                )
+            ) {
+                $searchableValues[] = $value;
+            }
+        }
+        return $searchableValues;
+    }
+
+    public static function getSearchableKeys($skipRelations = false): array
+    {
+        $searchableKeys = [];
+        foreach ((new static())->toSearchableArray() as $key => $value) {
+            if (
+                $key !== '_vectors' &&
+                !Arr::first(
+                    static::filterableFields(),
+                    fn($ff) => Str::is($ff, $key),
+                ) &&
+                (!$skipRelations ||
+                    !(new static())->isRelation(Str::camel($key)))
+            ) {
+                $searchableKeys[] = $key;
+            }
+        }
+
+        return $searchableKeys;
+    }
+}

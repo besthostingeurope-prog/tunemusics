@@ -1,0 +1,2 @@
+import{q as t,j as a,r as o,cq as u,cH as l,ch as c}from"./main-Cw1twhTG.js";function p({children:e,offlineFallback:s,resetSuspenseOnNavigate:r=!0}){const{pathname:n}=t();return a.jsx(o.Suspense,{fallback:a.jsx(i,{offlineFallback:s}),children:e},r?n:void 0)}function i({offlineFallback:e}){return u.isOnline()?a.jsx(c,{className:"absolute inset-0 m-auto"}):e||a.jsx(l,{})}export{p as P};
+//# sourceMappingURL=player-page-suspsense-Lpa4J-OI.js.map

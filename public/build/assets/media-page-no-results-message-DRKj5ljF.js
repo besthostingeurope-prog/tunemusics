@@ -1,0 +1,2 @@
+import{j as s,al as r,T as e}from"./main-Cw1twhTG.js";function n({description:a,searchQuery:i,className:t}){return i?s.jsx(r,{className:t,title:s.jsx(e,{message:"No results found"}),description:s.jsx(e,{message:"Try another search query or different filters"})}):s.jsx(r,{className:t,title:s.jsx(e,{message:"Nothing to display"}),description:a})}export{n as M};
+//# sourceMappingURL=media-page-no-results-message-DRKj5ljF.js.map

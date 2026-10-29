@@ -1,0 +1,2 @@
+import{aB as a,aW as s,u as e}from"./main-DrSbOir7.js";function r(t,{absolute:o}={}){let i=`/radio/${t.model_type}/${t.id}/${a(t.name)}`;return o&&(i=`${s().settings.base_url}${i}`),i}function u(){const{player:t,artist_provider:o,spotify_use_deprecated_api:i}=e();return!(t!=null&&t.hide_radio_button)&&o==="spotify"&&!!i}export{r as g,u};
+//# sourceMappingURL=use-should-show-radio-button-RjD1EwSm.js.map

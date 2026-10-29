@@ -1,0 +1,2 @@
+import{g as u}from"./countries-DsD40dcP.js";import{aH as i}from"./main-Cw1twhTG.js";const m=i((n="en")=>{const r=new Intl.DisplayNames([n],{type:"language"}),a=u(n),s=[],c=[];for(let o=0;o<a.length;o++){const g=a[o].code.toLowerCase(),e=new Intl.Locale("und",{region:g}).maximize().language;try{const t=r.of(e);t&&!c.includes(e)&&e!==t&&(c.push(e),s.push({code:e,name:t}))}catch{}}return s});export{m as g};
+//# sourceMappingURL=languages-DOZG6IRw.js.map

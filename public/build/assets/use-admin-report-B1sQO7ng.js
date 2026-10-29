@@ -1,0 +1,2 @@
+import{a as i,y as s,b as a}from"./main-Cw1twhTG.js";const n="admin/reports";function c(t={}){return i({queryKey:[n,t],queryFn:()=>u(t),placeholderData:s})}function u({types:t,dateRange:r}){const e={};return t&&(e.types=t.join(",")),r&&(e.startDate=r.start.toAbsoluteString(),e.endDate=r.end.toAbsoluteString(),e.timezone=r.start.timeZone),a.get(n,{params:e}).then(o=>o.data)}export{c as u};
+//# sourceMappingURL=use-admin-report-B1sQO7ng.js.map

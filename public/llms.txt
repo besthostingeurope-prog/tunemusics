@@ -1,0 +1,25 @@
+# TuneMusics
+
+> TuneMusics is an open music streaming platform for human and AI artists. Create, upload, stream and monetize music. AI-generated music, virtual artists and hybrid creators are fully accepted and fairly paid. No takedowns. No discrimination.
+
+## Main pages
+- [Home](https://www.tunemusics.com/): Stream music free - popular artists, albums, songs and playlists
+- [Popular artists](https://www.tunemusics.com/popular-artists): Trending artists on TuneMusics
+- [Popular albums](https://www.tunemusics.com/popular-albums): Trending albums
+- [New releases](https://www.tunemusics.com/new-releases): Latest album releases
+- [Genres](https://www.tunemusics.com/genres): Browse music by genre
+- [Pricing](https://www.tunemusics.com/pricing): Pro plans for listeners and artists
+
+## For artists
+- [AI Music Streaming Platform](https://www.tunemusics.com/pages/ai-music-streaming-platform): Upload and monetize AI-generated music
+- [Upload AI-Generated Music](https://www.tunemusics.com/pages/upload-ai-generated-music): No takedowns, fair artist payouts
+- [Platform for Virtual Artists](https://www.tunemusics.com/pages/platform-for-virtual-artists): Virtual artists and hybrid creators welcome
+- [Register](https://www.tunemusics.com/register): Create a free artist account
+
+## Legal
+- [About us](https://www.tunemusics.com/pages/about-us)
+- [Terms of service](https://www.tunemusics.com/pages/terms-of-service)
+- [Privacy policy](https://www.tunemusics.com/pages/privacy-policy)
+
+## Sitemap
+- [XML sitemap](https://www.tunemusics.com/storage/sitemaps/sitemap-index.xml)

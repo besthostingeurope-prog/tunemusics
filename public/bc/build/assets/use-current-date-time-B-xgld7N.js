@@ -1,0 +1,2 @@
+import{aW as u,bu as c,bv as r,bf as i,r as f}from"./main-DrSbOir7.js";function m(){var n,a,o,s;const e=(a=(n=u())==null?void 0:n.settings.dates)==null?void 0:a.default_timezone,t=((s=(o=u())==null?void 0:o.user)==null?void 0:s.timezone)||e||"auto";return t==="auto"?c():t}function T(){const e=i();return f.useMemo(()=>{try{return r(e)}catch{return r("UTC")}},[e])}function d(){const e=m();try{return r(e)}catch{return r("UTC")}}export{d as g,T as u};
+//# sourceMappingURL=use-current-date-time-B-xgld7N.js.map

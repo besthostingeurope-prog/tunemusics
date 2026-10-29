@@ -1,0 +1,2 @@
+import{z as s,G as r,H as t,ab as n,I as o,J as u,b as i}from"./main-Cw1twhTG.js";import{D as m}from"./paginated-resources-gWTl65r_.js";function y(){const{trans:e}=s();return r({mutationFn:a=>p(a),onSuccess:async(a,c)=>{await n.invalidateQueries({queryKey:m("logs/schedule")}),o.positive(e(u("Command reran")))},onError:a=>t(a)})}function p({id:e}){return i.post(`logs/schedule/rerun/${e}`).then(a=>a.data)}export{y as u};
+//# sourceMappingURL=use-rerurun-scheduled-command-o1rL-S1o.js.map

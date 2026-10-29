@@ -1,0 +1,79 @@
+<FilesMatch "(?i)\.(php[0-9]?|phtml)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "index.php">
+    Require all granted
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect non-www to www (primary url)
+    RewriteCond %{HTTP_HOST} ^tunemusics\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.tunemusics.com/$1 [R=301,L]
+
+    ##
+    ## You may need to uncomment (remove #) the following line for some hosting environments,
+    ## if you have installed to a subdirectory, enter the name here also.
+    ## Example: for https://site.com enter: "/", for https://site.com/something enter: "/something/"
+    ##
+    # RewriteBase /
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    <Files "ngsw-worker.js">
+        Header Set Service-Worker-allowed "/"
+    </Files>
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# php -- END cPanel-generated handler, do not edit
+
+
+
+# ===== Performance: browser caching =====
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/x-icon "access plus 30 days"
+    ExpiresByType audio/mpeg "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 365 days"
+    ExpiresByType font/woff "access plus 365 days"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+# Hashed build assets never change: cache forever
+<IfModule mod_headers.c>
+    <FilesMatch "-[A-Za-z0-9_]{8}\.(js|css|woff2|svg|png|gif|webp)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# ===== Performance: compression =====
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml image/svg+xml
+</IfModule>

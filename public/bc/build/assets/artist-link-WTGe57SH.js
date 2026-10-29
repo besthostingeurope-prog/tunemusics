@@ -1,0 +1,2 @@
+import{aB as r,aW as t,r as o,j as a,y as l,d as u}from"./main-DrSbOir7.js";function d({artist:e,className:s,...n}){const i=o.useMemo(()=>f(e),[e]);return a.jsx(l,{...n,className:u("overflow-x-hidden overflow-ellipsis outline-none hover:underline focus-visible:underline",s),to:i,children:e.name})}function f(e,{absolute:s}={}){let n=`/artist/${e.id}/${r(e.name)}`;return s&&(n=`${t().settings.base_url}${n}`),n}export{d as A,f as g};
+//# sourceMappingURL=artist-link-WTGe57SH.js.map

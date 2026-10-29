@@ -1,0 +1,164 @@
+@import '../../common/foundation/resources/client/core/common.css';
+@import 'web-player/playable-item/content-grid.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dashboard-grid:not(.dashboard-mobile-mode) .player-section {
+  @apply rounded-panel border border-divider-lighter bg-elevated dark:border-none;
+}
+
+.button-with-progress {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+      theme('colors.primary') var(--progress),
+      transparent 0
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: --progress 0.2s ease;
+  }
+}
+
+@media (min-width: 1200px) {
+  .web-player-container {
+    max-width: 954px;
+  }
+}
+@media (min-width: 1310px) {
+  .web-player-container {
+    max-width: 1086px;
+  }
+}
+@media (min-width: 1430px) {
+  .web-player-container {
+    max-width: 1206px;
+  }
+}
+@media (min-width: 1728px) {
+  .web-player-container {
+    max-width: 1504px;
+  }
+}
+
+.landing-container {
+  @apply relative mx-auto px-24;
+}
+
+@media screen and (min-width: 768px) {
+  .landing-container {
+    max-width: 750px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .landing-container {
+    max-width: 970px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .landing-container {
+    max-width: 1170px;
+  }
+}
+
+
+/* ==========================================================================
+   21st Century Premium Audio Experience - TuneMusics Obsidian Theme
+   ========================================================================== */
+
+:root {
+  --tm-accent: 236 72 153;
+  --tm-glow: rgba(236, 72, 153, 0.25);
+  --tm-surface: rgba(18, 18, 22, 0.72);
+  --tm-border: rgba(255, 255, 255, 0.08);
+}
+
+.dark {
+  --be-bg: 7 7 10;
+  --be-bg-alt: 12 12 16;
+  --be-bg-elevated: 18 18 24;
+}
+
+/* Glassmorphism on modern web player components */
+.dashboard-grid:not(.dashboard-mobile-mode) .player-section {
+  background: rgba(18, 18, 26, 0.78) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 16px 38px -8px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Floating interactive player dock */
+.dashboard-grid-footer.player-section {
+  border-radius: 1.25rem !important;
+  margin: 0.75rem 1rem 1rem 1rem !important;
+  height: 5.75rem !important;
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Card hover glow & 3D micro-lift */
+.content-grid > *,
+.content-grid-item {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.32s ease !important;
+}
+
+.content-grid > *:hover,
+.content-grid-item:hover {
+  transform: translateY(-4px) scale(1.018) !important;
+}
+
+.content-grid img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease !important;
+}
+
+.content-grid > *:hover img {
+  filter: brightness(1.08) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.55)) !important;
+}
+
+/* Tactile playback toggle */
+.playback-toggle-button {
+  box-shadow: 0 8px 24px -4px rgba(225, 29, 72, 0.45) !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
+}
+
+.playback-toggle-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 12px 30px -2px rgba(225, 29, 72, 0.65) !important;
+}
+
+.playback-toggle-button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Smooth custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}

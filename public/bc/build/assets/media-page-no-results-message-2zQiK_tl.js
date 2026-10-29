@@ -1,0 +1,2 @@
+import{j as s,as as r,T as e}from"./main-DrSbOir7.js";function n({description:a,searchQuery:i,className:t}){return i?s.jsx(r,{className:t,title:s.jsx(e,{message:"No results found"}),description:s.jsx(e,{message:"Try another search query or different filters"})}):s.jsx(r,{className:t,title:s.jsx(e,{message:"Nothing to display"}),description:a})}export{n as M};
+//# sourceMappingURL=media-page-no-results-message-2zQiK_tl.js.map

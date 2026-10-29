@@ -1,0 +1,2 @@
+import{az as l,j as i}from"./main-Cw1twhTG.js";import{V as r}from"./virtual-table-body-CItdtjYF.js";import{T as a}from"./track-list-item-BvMRGvAh.js";import{T as m}from"./track-table-BYIhfPU-.js";import{I as n}from"./infinite-scroll-sentinel-DwZKgaNE.js";function j({tracks:s,query:e,totalTracks:t}){return l()?i.jsx(m,{tracks:s,tableBody:i.jsx(r,{query:e??null,totalItems:e?t:s.length})}):i.jsxs("div",{children:[s.map(o=>i.jsx(a,{queue:s,track:o,className:"mb-40"},o.id)),e?i.jsx(n,{query:e}):null]})}export{j as T};
+//# sourceMappingURL=track-list-kpQd0ox3.js.map

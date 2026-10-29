@@ -1,0 +1,2 @@
+import{J as n,M as o,ai as s,cE as a,P as r,Q as m,b as u}from"./main-DrSbOir7.js";function l(){return n({mutationFn:e=>i(e),onSuccess:(e,t)=>{s.invalidateQueries({queryKey:a.invalidateKey}),r(m("[one Comment deleted|other Deleted :count comments]",{values:{count:t.commentIds.length}}))},onError:e=>o(e)})}function i({commentIds:e}){return u.delete(`comment/${e.join(",")}`).then(t=>t.data)}export{l as u};
+//# sourceMappingURL=use-delete-comments-DG7sfbiG.js.map

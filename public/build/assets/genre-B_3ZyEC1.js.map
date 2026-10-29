@@ -1,0 +1,1 @@
+{"version":3,"file":"genre-B_3ZyEC1.js","sources":["../../../resources/client/web-player/genres/genre.ts"],"sourcesContent":["export const GENRE_MODEL = 'genre';\n\nexport interface Genre {\n  id: number;\n  name: string;\n  display_name: string;\n  model_type: 'genre';\n  image: string | null;\n}\n"],"names":["GENRE_MODEL"],"mappings":"AAAO,MAAMA,EAAc"}

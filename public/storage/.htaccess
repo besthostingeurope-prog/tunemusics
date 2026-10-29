@@ -1,0 +1,5 @@
+# Block execution/serving of any script in the uploads tree (anti-webshell)
+# Safe on LiteSpeed/Apache/FPM — no php_flag (which 500s on this server)
+<FilesMatch "\.(php|php[0-9]+|phtml|phps|pht|phar|cgi|pl|py|jsp|asp|aspx|sh|exe|bat)$">
+    Require all denied
+</FilesMatch>

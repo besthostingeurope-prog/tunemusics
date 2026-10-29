@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin
+Disallow: /api/
+Disallow: /backstage/
+Disallow: /login
+Disallow: /register
+Disallow: /account-settings
+Disallow: /update
+
+Sitemap: https://www.tunemusics.com/storage/sitemaps/sitemap-index.xml

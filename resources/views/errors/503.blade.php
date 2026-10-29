@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Be right back')
+@section('heading', "We'll be right back!")
+@section('message', 'TuneMusics is getting a quick tune-up to sound even better. This usually takes just a few minutes.')
+@section('button', 'Refresh')

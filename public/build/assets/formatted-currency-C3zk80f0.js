@@ -1,0 +1,2 @@
+import{r as s,a$ as a,j as i}from"./main-Cw1twhTG.js";const u=s.memo(({value:e,valueInCents:r,currency:n})=>{const t=a({style:"currency",currency:n,currencyDisplay:"narrowSymbol"});let o=r?m(r,t):e;return(o==null||isNaN(o))&&(o=0),i.jsx(s.Fragment,{children:t.format(o)})});function m(e,r){const{minimumFractionDigits:n}=r.resolvedOptions(),t=Math.pow(10,n??2);return e/t}export{u as F};
+//# sourceMappingURL=formatted-currency-C3zk80f0.js.map

@@ -1,0 +1,2 @@
+import{G as n,H as o,ab as s,cl as a,I as r,J as m,b as u}from"./main-Cw1twhTG.js";function c(){return n({mutationFn:e=>i(e),onSuccess:(e,t)=>{s.invalidateQueries({queryKey:a.invalidateKey}),r(m("[one Comment deleted|other Deleted :count comments]",{values:{count:t.commentIds.length}}))},onError:e=>o(e)})}function i({commentIds:e}){return u.delete(`comment/${e.join(",")}`).then(t=>t.data)}export{c as u};
+//# sourceMappingURL=use-delete-comments-BKI-1LvA.js.map

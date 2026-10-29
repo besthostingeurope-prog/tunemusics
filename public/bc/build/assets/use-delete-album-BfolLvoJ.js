@@ -1,0 +1,2 @@
+import{v as r,an as n,h as o,J as l,M as m,P as c,Q as d,ai as s,b}from"./main-DrSbOir7.js";function p(){const{pathname:t}=r(),a=n(),{getRedirectUri:u}=o();return l({mutationFn:e=>y(e),onSuccess:(e,{albumId:i})=>{c(d("Album deleted")),t.startsWith(`/album/${i}`)&&a(u()),s.invalidateQueries({queryKey:["tracks"]}),s.invalidateQueries({queryKey:["albums"]}),s.invalidateQueries({queryKey:["artists"]})},onError:e=>m(e)})}function y({albumId:t}){return b.delete(`albums/${t}`).then(a=>a.data)}export{p as u};
+//# sourceMappingURL=use-delete-album-BfolLvoJ.js.map

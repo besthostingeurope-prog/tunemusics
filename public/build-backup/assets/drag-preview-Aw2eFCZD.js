@@ -1,0 +1,2 @@
+import{R as i,r as e,c7 as o,j as d,c8 as f}from"./main-DrSbOir7.js";const p=i.forwardRef((a,l)=>{const r=a.children,[t,s]=e.useState(null),n=e.useRef(null);return e.useImperativeHandle(l,()=>(c,u)=>{o.flushSync(()=>{s(r(c))}),u(n.current),requestAnimationFrame(()=>{s(null)})},[r]),t?o.createPortal(d.jsx("div",{style:{zIndex:-100,position:"absolute",top:0,left:-1e5},ref:n,children:t}),f):null});export{p as D};
+//# sourceMappingURL=drag-preview-Aw2eFCZD.js.map

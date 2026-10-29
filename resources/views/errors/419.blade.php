@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Session expired')
+@section('heading', 'Your session took a break')
+@section('message', 'You were away for a while and your session expired. Just refresh and continue enjoying the music.')
+@section('button', 'Refresh')

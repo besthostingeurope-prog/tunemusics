@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class TrackPlay extends Model
+{
+    use HasFactory;
+
+    const UPDATED_AT = null;
+    protected $guarded = [];
+    protected $casts = ['user_id' => 'integer', 'track_id' => 'integer'];
+
+    public function track(): BelongsTo
+    {
+        return $this->belongsTo(Track::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}

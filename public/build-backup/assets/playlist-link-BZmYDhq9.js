@@ -1,0 +1,2 @@
+import{r as n,j as i,y as r,d as o,aB as l,aW as u}from"./main-DrSbOir7.js";function g({playlist:t,className:s}){const a=n.useMemo(()=>c(t),[t.id]);return i.jsx(r,{className:o("capitalize hover:underline",s),to:a,children:t.name})}function c(t,{absolute:s}={}){const a=l(t.name);let e=`/playlist/${t.id}/${a}`;return s&&(e=`${u().settings.base_url}${e}`),e}export{g as P,c as g};
+//# sourceMappingURL=playlist-link-BZmYDhq9.js.map

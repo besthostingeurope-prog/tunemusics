@@ -1,0 +1,2 @@
+import{az as e,j as i}from"./main-Cw1twhTG.js";import{A as m}from"./album-grid-item-C3GdT_H2.js";import{A as n}from"./album-list-item-CXT6crmn.js";import{C as a}from"./content-grid-ChGSSxOx.js";import{I as o}from"./infinite-scroll-sentinel-DwZKgaNE.js";function c({albums:t,query:r}){return e()?i.jsxs("div",{children:[i.jsx(a,{children:t.map(s=>i.jsx(m,{album:s},s.id))}),r&&i.jsx(o,{query:r})]}):i.jsxs("div",{children:[t.map(s=>i.jsx(n,{album:s,className:"mb-40"},s.id)),r&&i.jsx(o,{query:r})]})}export{c as A};
+//# sourceMappingURL=album-list-y2ilqNPc.js.map

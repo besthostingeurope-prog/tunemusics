@@ -1,0 +1,33 @@
+<?php namespace App\Traits;
+
+use Illuminate\Database\Eloquent\Builder;
+
+trait OrdersByPopularity
+{
+    public function scopeOrderByPopularity(Builder $query, $direction = 'desc')
+    {
+        $table = $this->getTable();
+        $method =
+            $table === 'playlists' || $table === 'genres'
+                ? 'local'
+                : settings('player.sort_method', 'external');
+
+        $column =
+            $method === 'external'
+                ? 'external_popularity'
+                : $this->getLocalField($table);
+
+        return $query
+            ->orderBy($column, $direction)
+            ->orderBy($this->getTable() . '.id', 'desc');
+    }
+
+    private function getLocalField(string $table): string
+    {
+        if ($table === 'genres') {
+            return 'popularity';
+        } else {
+            return 'plays';
+        }
+    }
+}

@@ -1,0 +1,2 @@
+import{j as e,d as a,V as m,T as x}from"./main-Cw1twhTG.js";function r({inline:s}){return e.jsxs("div",{className:a(s&&"flex flex-wrap gap-12"),children:[e.jsx(m,{name:"spotify_id",label:e.jsx(x,{message:"Spotify ID"}),className:a(s?"flex-1":"mb-24"),minLength:22,maxLength:22}),e.jsx(m,{name:"deezer_id",label:e.jsx(x,{message:"Deezer ID"}),type:"number",className:a(s?"flex-1":"mb-24")})]})}export{r as E};
+//# sourceMappingURL=external-ids-fields-DKUKU8tp.js.map

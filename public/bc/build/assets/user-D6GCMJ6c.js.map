@@ -1,0 +1,1 @@
+{"version":3,"file":"user-D6GCMJ6c.js","sources":["../../../common/foundation/resources/client/ui/library/types/user.ts"],"sourcesContent":["export const USER_MODEL = 'user';\n\nexport interface User {\n  id: number;\n  name: string;\n  email: string;\n  language?: string;\n  timezone?: string;\n  country?: string;\n}\n"],"names":["USER_MODEL"],"mappings":"AAAO,MAAMA,EAAa"}

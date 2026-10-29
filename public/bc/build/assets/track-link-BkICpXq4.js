@@ -1,0 +1,2 @@
+import{aB as a,aW as i,r as t,j as o,y as l,d as u}from"./main-DrSbOir7.js";function m({track:e,className:n,...s}){const r=t.useMemo(()=>f(e),[e]);return o.jsx(l,{...s,className:u("overflow-x-hidden overflow-ellipsis hover:underline",n),to:r,children:e.name})}function f(e,{absolute:n}={}){let s=`/track/${e.id}/${a(e.name)}`;return n&&(s=`${i().settings.base_url}${s}`),s}export{m as T,f as g};
+//# sourceMappingURL=track-link-BkICpXq4.js.map

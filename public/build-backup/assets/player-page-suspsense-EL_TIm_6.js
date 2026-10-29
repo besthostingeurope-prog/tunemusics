@@ -1,0 +1,2 @@
+import{v as t,j as a,r as o,cN as u,dd as l,cy as i}from"./main-DrSbOir7.js";function p({children:e,offlineFallback:s,resetSuspenseOnNavigate:r=!0}){const{pathname:n}=t();return a.jsx(o.Suspense,{fallback:a.jsx(c,{offlineFallback:s}),children:e},r?n:void 0)}function c({offlineFallback:e}){return u.isOnline()?a.jsx(i,{className:"absolute inset-0 m-auto"}):e||a.jsx(l,{})}export{p as P};
+//# sourceMappingURL=player-page-suspsense-EL_TIm_6.js.map

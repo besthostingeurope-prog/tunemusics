@@ -1,0 +1,2 @@
+import{z as o,j as r}from"./main-DrSbOir7.js";import{A as m}from"./access-token-panel-Cv9Tckfi.js";import"./account-settings-sidenav-BmTN1g8w.js";import"./use-all-social-logins-disabled-CgjwjDTs.js";import"./PhonelinkLock-B_slC55J.js";import"./Login-CEDjoke4.js";import"./list-B31h6fZF.js";import"./external-link-vA96zJZO.js";import"./use-clipboard-CLXuWL3L.js";function f(){const t=o();return r.jsx(m,{user:t})}export{f as Component};
+//# sourceMappingURL=update-user-api-tab-Q5d__5mM.js.map

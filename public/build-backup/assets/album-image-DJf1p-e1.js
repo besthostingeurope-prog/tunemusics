@@ -1,0 +1,2 @@
+import{I as c,d as n,j as a,Q as i}from"./main-DrSbOir7.js";import{A as l}from"./Album-D-zsXzTQ.js";function f({album:s,className:r,size:o}){const{trans:m}=c(),e=s==null?void 0:s.image,t=n(r,o,"object-cover bg-fg-base/4",e?"block":"flex items-center justify-center");return e?a.jsx("img",{className:t,draggable:!1,loading:"lazy",src:e,alt:m(i("Image for :name",{values:{name:s.name}}))}):a.jsx("span",{className:n(t,"overflow-hidden"),children:a.jsx(l,{className:"max-w-[60%] text-divider",size:"text-9xl"})})}export{f as A};
+//# sourceMappingURL=album-image-DJf1p-e1.js.map

@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'A small hiccup')
+@section('heading', 'Oops! The music skipped a beat')
+@section('message', "Something went wrong on our side - our team is on it. Your playlists and music are safe. Please try again in a moment.")
+@section('button', 'Try again')

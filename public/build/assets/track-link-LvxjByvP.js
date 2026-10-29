@@ -1,0 +1,2 @@
+import{ar as i,W as t,r as a,j as o,v as l,d as u}from"./main-Cw1twhTG.js";function m({track:e,className:r,...s}){const n=a.useMemo(()=>f(e),[e]);return o.jsx(l,{...s,className:u("overflow-x-hidden overflow-ellipsis hover:underline",r),to:n,children:e.name})}function f(e,{absolute:r}={}){let s=`/track/${e.id}/${i(e.name)}`;return r&&(s=`${t().settings.base_url}${s}`),s}export{m as T,f as g};
+//# sourceMappingURL=track-link-LvxjByvP.js.map

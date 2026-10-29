@@ -1,0 +1,2 @@
+import{j as s,r as a,w as e,T as t,N as n,O as r,F as o}from"./main-DrSbOir7.js";function i(){return s.jsxs(a.Fragment,{children:[s.jsx(e,{children:s.jsx(t,{message:"My Earnings"})}),s.jsx(n,{color:"bg",menuPosition:"billing-page"}),s.jsxs("div",{className:"flex flex-col",children:[s.jsx("div",{className:"container mx-auto my-24 flex-auto px-24",children:s.jsx(r,{})}),s.jsx(o,{className:"container mx-auto px-24"})]})]})}export{i as Component};
+//# sourceMappingURL=artist-earnings-layout-WCWCqyzf.js.map

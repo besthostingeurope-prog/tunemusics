@@ -1,0 +1,2 @@
+import{r,j as a,v as i,d as o,ar as l,W as u}from"./main-Cw1twhTG.js";function f({genre:e,className:t,...s}){const n=r.useMemo(()=>c(e),[e]);return a.jsx(i,{...s,className:o("block outline-none first-letter:capitalize hover:underline focus-visible:underline",t),to:n,children:e.display_name||e.name})}function c(e,{absolute:t}={}){let n=`/genre/${l(e.name)}`;return t&&(n=`${u().settings.base_url}${n}`),n}export{f as G,c as g};
+//# sourceMappingURL=genre-link-BXeWJeRT.js.map

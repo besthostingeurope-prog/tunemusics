@@ -1,0 +1,2 @@
+import{ar as a,W as e,u as r}from"./main-Cw1twhTG.js";function s(t,{absolute:o}={}){let i=`/radio/${t.model_type}/${t.id}/${a(t.name)}`;return o&&(i=`${e().settings.base_url}${i}`),i}function u(){const{player:t,metadata_provider:o,spotify_use_deprecated_api:i}=r();return!(t!=null&&t.hide_radio_button)&&o==="spotify"&&!!i||o==="deezer"}export{s as g,u};
+//# sourceMappingURL=use-should-show-radio-button-CypohmrZ.js.map
