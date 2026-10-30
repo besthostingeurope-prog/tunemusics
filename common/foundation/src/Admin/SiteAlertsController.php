@@ -29,6 +29,7 @@ class SiteAlertsController extends BaseController
                 ];
             }
 
+            /*
             $moduleLicenseNotActivated = collect(config('modules', []))->some(
                 fn($config) => !Arr::get($config, 'built_in') &&
                     Arr::get($config, 'installed') &&
@@ -49,6 +50,7 @@ class SiteAlertsController extends BaseController
                         '">Activate license</a>.',
                 ];
             }
+            */
 
             $latestVersion = Cache::get('app_latest_version');
             if (
