@@ -65,8 +65,7 @@ class BaseSitemapGenerator
         string $name,
     ): int {
         $model
-            ->orderBy('id')
-            ->chunk($this->queryChunkSize, function ($records) use ($name) {
+            ->chunkById($this->queryChunkSize, function ($records) use ($name) {
                 $modelName = ucfirst(Str::snake($records->first()::MODEL_TYPE));
                 $methodName = "add{$modelName}Line";
                 foreach ($records as $record) {
