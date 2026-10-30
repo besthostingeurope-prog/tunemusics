@@ -25,6 +25,7 @@ class AlbumLoader
         if (
             $loader === 'albumPage' &&
             $album->needsUpdating() &&
+            config('app.allow_live_scrape', false) &&
             ($updatedAlbum = (new MusicMetadataProvider())->importAlbum($album))
         ) {
             $album = $updatedAlbum;
